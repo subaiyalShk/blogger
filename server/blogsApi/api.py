@@ -1,4 +1,5 @@
 from rest_framework import viewsets, permissions, generics
+from rest_framework.response import Response
 from .serializers import *
 from blogsApi.models import *
 
@@ -16,8 +17,7 @@ class CollectionViewSet(viewsets.ModelViewSet):
 #     ]
 #     serializer_class= CollectionSerializer
 
-class BlogPostRudView(generics.RetrieveUpdateDestroyAPIView):
-    lookup_field    = 'pk'
+class BlogsView(viewsets.ViewSet):
     serializer_class = BlogSerializer
 
     def get_queryset(self):

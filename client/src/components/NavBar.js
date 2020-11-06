@@ -62,21 +62,42 @@ export default function ButtonAppBar(props) {
                             About
                         </Link>
                         </Grid>
-                        {categories.map((category)=>{ 
-                            return(
                             <Grid item>
-                            <Link
-                                component="button"
-                                variant="body2"
-                                style={{color:'white'}}
-                                onClick={() => {
-                                    navigate("/category/"+category.id)
-                                }}
-                                >
-                                {category.title}
-                            </Link>
+                                <Link
+                                    component="button"
+                                    variant="body2"
+                                    style={{color:'white'}}
+                                    onClick={() => {
+                                        navigate("/littleworthasoul")
+                                    }}
+                                    >
+                                    Little Worth a Soul
+                                </Link>
                             </Grid>
-                        )})}
+                            <Grid item>
+                                <Link
+                                    component="button"
+                                    variant="body2"
+                                    style={{color:'white'}}
+                                    onClick={() => {
+                                        navigate("/tedx")
+                                    }}
+                                    >
+                                    TEDx
+                                </Link>
+                            </Grid>
+                            <Grid item>
+                                <Link
+                                    component="button"
+                                    variant="body2"
+                                    style={{color:'white'}}
+                                    onClick={() => {
+                                        navigate("/art")
+                                    }}
+                                    >
+                                    Art
+                                </Link>
+                            </Grid>
                     </Grid>
                 </Grid>
                 <Grid item >

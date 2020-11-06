@@ -7,10 +7,13 @@ from blogsApi.api import *
 router = routers.DefaultRouter()
 router.register('api/collections', CollectionViewSet)
 
+
+
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    url(r'^(?P<pk>\d+)$', BlogPostRudView.as_view(), name='post-rud')
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ] 
 
 # router.urls

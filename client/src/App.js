@@ -12,6 +12,9 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import BlogsView from './views/BlogView';
 import DetailView from './views/DetailView';
+import Page1 from './views/Page1';
+import Page2 from './views/Page2';
+import Page3 from './views/Page3';
 
 
 
@@ -47,14 +50,20 @@ function App() {
       {width < breakpoint ? <NavBar2/>:<></>}
       <Container maxWidth="lg">
         <Grid container direction="column" justify="center" alignItems="center">
+        {width < breakpoint ? <></>:
+          <Grid item xs={5} style={{width:"100%"}}>
+            <img src="/images/mahintariq.png" style={{width:'80%'}}/>
+          </Grid>}
           <Grid item xs={false} style={{width:"100%"}}>
             {width < breakpoint ? <></>:<NavBar1/>}
           </Grid>
           <Grid item spacing={3} xs={12} style={{width:"100%", padding:'10px'}}>
             <Router>
               <IndexView path="/" />
-              <BlogsView path="/category/:id"/>
-              <DetailView path="/blog/:id"/>
+              {/* <BlogsView path="/category/:id"/> */}
+              <Page1 path="/littleworthasoul"/>
+              <Page2 path="/art"/>
+              <Page3 path="/tedx"/>
             </Router>
           </Grid>
         </Grid>

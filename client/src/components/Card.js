@@ -12,8 +12,9 @@ import {navigate} from '@reach/router';
 const useStyles = makeStyles({
     root: {
         maxWidth: '100%',
-        background:'#F3C6CC',
-        color:'black'
+        color:'white',
+        backgroundColor:'black'
+        
     },
     media: {
         height: 140,
@@ -28,26 +29,18 @@ const BlogCard = (props) => {
     const classes = useStyles();
 
     return (
-        <Card className={classes.root}>
+        <Card className={classes.root} onClick={()=>navigate('/blog/'+ id)} >
         <CardActionArea>
             <CardMedia
             className={classes.media}
             image={imgUrl}
             />
-            <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-                {title}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-                {description}
-            </Typography>
+            <CardContent className={classes.cardcontent}>
+                <Typography variant="h5" component="h2">
+                    {title}
+                </Typography>
             </CardContent>
         </CardActionArea>
-        <CardActions>
-            <Button size="small" color="black" onClick={()=>navigate('/blog/'+ id)}>
-                read more
-            </Button>
-        </CardActions>
         </Card>
     );
 }

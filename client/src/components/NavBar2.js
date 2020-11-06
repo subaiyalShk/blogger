@@ -85,32 +85,34 @@ export default function ButtonAppBar(props) {
                     role="presentation"
                     onClick={()=>setState(false)}
                     onKeyDown={()=>setState(false)}
-                   
                     >
                     <List>
                         <ListItem button onClick={() => {navigate("/")}}>
                             <ListItemText primary={'About'} />
                         </ListItem>
-                        {categories.map((category)=>{ 
-                        return(
-                            <ListItem button key={category} onClick={() => {navigate("/category/"+category.id)}}>
-                                <ListItemText primary={category.title} />
+                            <ListItem button onClick={() => {navigate('/littleworthasoul')}}>
+                                <ListItemText primary={'Little Worth a Soul'} />
                             </ListItem>
-                        )})}
+                            <ListItem button onClick={() => {navigate('/tedx')}}>
+                                <ListItemText primary={'TEDx'} />
+                            </ListItem>
+                            <ListItem button onClick={() => {navigate('/art')}}>
+                                <ListItemText primary={'Art'} />
+                            </ListItem>
                     </List>
                     <Divider/>
                     <List>
                     <ListItem button>
-                        <IconButton style={{color:'black'}} onClick={() => {navigate("/category/")}} >
+                        <IconButton style={{color:'black'}}  >
                             <FacebookIcon/>
                         </IconButton>
-                        <IconButton  style={{color:'black'}} onClick={() => {navigate("/category/")}} >
+                        <IconButton  style={{color:'black'}}  >
                             <InstagramIcon/>
                         </IconButton>
-                        <IconButton style={{color:'black'}} onClick={() => {navigate("/category/")}} >
+                        <IconButton style={{color:'black'}}  >
                             <LinkedInIcon/>
                         </IconButton>
-                        <IconButton  style={{color:'black'}} onClick={() => {navigate("/category/")}} >
+                        <IconButton  style={{color:'black'}}  >
                             <PinterestIcon/>
                         </IconButton>
                         <IconButton style={{color:'black'}} onClick={() => {navigate("/category/")}} >

@@ -6,7 +6,7 @@ class CollectionSerializer(serializers.ModelSerializer):
         model = Collection
         fields = '__all__'
         
-class BlogSerializer(serializers.ModelSerializer):
+class BlogSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Blog
         fields = '__all__'
