@@ -1,5 +1,5 @@
-# MERN Stack Resume Web App Template      
-![ReactJS Resume Website Template](resume.gif?raw=true "ReactJS Resume Website Template")
+# Portfolio site for a Client      
+![ReactJS Resume Website Template](display.gif?raw=true "ReactJS Resume Website Template")
 ### <a href="https://react-resume-template.herokuapp.com/">LIVE DEMO</a> 
 
 ## Description
