@@ -47,8 +47,8 @@ const IndexView = props => {
         },
         resumebtn:{
             marginTop:'10px',
-            backgroundColor:'black',
-            color:'white'
+            backgroundColor:'#F3C6CC',
+            color:'black'
         },
         paper: {
             padding: theme.spacing(2),

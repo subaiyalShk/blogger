@@ -67,8 +67,8 @@ function App() {
       height:'315px'
   },
   resumebtn:{
-    backgroundColor:'black',
-    color:'white'
+    backgroundColor:'#F3C6CC',
+    color:'black'
   },
   email:{
     position:'relative',
