@@ -72,7 +72,8 @@ function App() {
   },
   email:{
     position:'relative',
-    left:'80px'
+    left:'280px',
+    top:'-100px'
   },
   footermobile:{
     backgroundColor:'black',
@@ -124,13 +125,10 @@ function App() {
             </Typography>
           </Grid>
           <Grid item container className={classes.call2action} direction="row" justify="flex-start" alignItems="flex-start"  >
-            <Grid item style={{paddingRight:'40px', paddingTop:'0px'}} className={classes.email}>
-                <Typography variant="p" component="p">
-                    .
-                </Typography>       
-                <Typography variant="p" component="p">
-                    ..
-                </Typography>                     
+            <Grid item style={{paddingRight:'40px', paddingTop:'0px'}} className={classes.email}>     
+              <Typography variant="h5" component="h5">
+                  Lets Chat! 
+              </Typography>                     
             </Grid>
             <Grid item container className={classes.inputsmobile}>
               <Typography variant="p" component="p" style={{color:'black'}}>
