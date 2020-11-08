@@ -15,6 +15,7 @@ import DetailView from './views/DetailView';
 import Page1 from './views/Page1';
 import Page2 from './views/Page2';
 import Page3 from './views/Page3';
+import {navigate} from '@reach/router';
 
 
 
@@ -59,11 +60,11 @@ function App() {
           </Grid>
           <Grid item spacing={3} xs={12} style={{width:"100%", padding:'10px'}}>
             <Router>
-              <IndexView path="/" />
+              <IndexView path="/" width={width} breakpoint={breakpoint} />
               {/* <BlogsView path="/category/:id"/> */}
-              <Page1 path="/littleworthasoul"/>
-              <Page2 path="/art"/>
-              <Page3 path="/tedx"/>
+              <Page1 path="/littleworthasoul" width={width} breakpoint={breakpoint}/>
+              <Page2 path="/art" width={width} breakpoint={breakpoint}/>
+              <Page3 path="/tedx" width={width} breakpoint={breakpoint}/>
             </Router>
           </Grid>
         </Grid>

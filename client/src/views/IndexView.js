@@ -16,6 +16,7 @@ import {navigate} from '@reach/router';
 
 
 const IndexView = props => {
+    const {width, breakpoint}= props;
     const projects = [
         {
             imgUrl : '/images/art.jpg',
@@ -43,6 +44,11 @@ const IndexView = props => {
             width: '100%',
             minHeight:'86vh',
         },
+        resumebtn:{
+            marginTop:'10px',
+            backgroundColor:'black',
+            color:'white'
+        },
         paper: {
             padding: theme.spacing(2),
             textAlign: 'center',
@@ -60,24 +66,24 @@ const IndexView = props => {
         littleworthasoul:{
             backgroundColor:'black',
             color:'white',
-            position:'relative',
-            top:'-100px',
-            left:'130px'
+            position:'absolute',
+            top:'100px',
+            left:'330px'
         },
         art:{
             backgroundColor:'black',
             color:'white',
-            position:'relative',
-            top:'200px',
-            left:'150px'
+            position:'absolute',
+            bottom:'190px',
+            left:'220px'
 
         },
         tedx:{
             backgroundColor:'black',
             color:'white',
-            position:'relative',
-            top:'160px',
-            left:'40px'
+            position:'absolute',
+            bottom:'320px',
+            left:'450px'
         },
         img2:{
             background: 'url(/images/img2.png)',
@@ -101,21 +107,12 @@ const IndexView = props => {
             backgroundPosition: 'center',
             minHeight:'60vh',
         },
-        work:{
-            background: 'url(/images/work.jpg)',
-            backgroundSize: '100%',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            position:'relative',
-            left: '30px',
-            bottom:'50px'
-        },
         projectback1:{
             background: 'url(/images/projectback1.png)',
             backgroundSize: '100%',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            minHeight:'65vh',
+            height:'630px',
             margin:'15px'
         },
         projectback2:{
@@ -123,45 +120,99 @@ const IndexView = props => {
             backgroundSize: '100%',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            minHeight:'65vh',
+            height:'630px',
             padding:'25px',
-            marginLeft:'5px'
+            marginLeft:'5px',
+            position:'relative'
         },
         workback1:{
             background: 'url(/images/workback1.png)',
             backgroundSize: '100%',
-            backgroundPosition: 'center',
+            backgroundPosition: 'bottom',
             backgroundRepeat: 'no-repeat',
-            height:'925px',
-            padding:'25px'
+            height:'670px',
         },
         workback2:{
             background: 'url(/images/workback2.png)',
             backgroundSize: '100%',
-            backgroundPosition: 'center',
+            backgroundPosition: 'bottom',
             backgroundRepeat: 'no-repeat',
-            height:'925px',
-            paddingTop:'60px'
-        },
-        workimg:{
-            width:'90%',
-            height:'60%',
-            position:'relative',
-            top:'60px'
+            height:'670px',
+            position:'relative'
         },
         workexp:{
-            position:'relative',
-            top:'-270px'
+            position:'absolute',
+            width:'520px',
+            top:'-82px'
+
         },
-        footer:{
-            backgroundColor:'black', color:'white'
+//  Styles for mobile site
+        projectback1mobile:{
+            background: 'url(/images/projectback1.png)',
+            backgroundSize: '100%',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            height:'730px',
+            margin:'15px'
+        },
+        projectback2mobile:{
+            background: 'url(/images/projectback2.png)',
+            backgroundSize: '100%',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            height:'640px',
+            padding:'25px',
+            marginLeft:'5px',
+            position:'relative'
+        },
+        littleworthasoulmobile:{
+            backgroundColor:'black',
+            color:'white',
+            position:'absolute',
+            top:'120px',
+            left:'230px'
+        },
+        artmobile:{
+            backgroundColor:'black',
+            color:'white',
+            position:'absolute',
+            bottom:'90px',
+            left:'190px'
+        },
+        tedxmobile:{
+            backgroundColor:'black',
+            color:'white',
+            position:'absolute',
+            top:'280px',
+            left:'360px'
+        },
+        workback1mobile:{
+            background: 'url(/images/workback1.png)',
+            backgroundSize: '100%',
+            backgroundPosition: 'bottom',
+            backgroundRepeat: 'no-repeat',
+            height:'530px',
+        },
+        workback2mobile:{
+            background: 'url(/images/workback2.png)',
+            backgroundSize: '100%',
+            backgroundPosition: 'bottom',
+            backgroundRepeat: 'no-repeat',
+            height:'870px',
+            position:'relative'
+        },
+        workexpmobile:{
+            position:'absolute',
+            width:'420px',
+            top:'50px'
         }
     }));
     const classes = useStyles();
     
     return(
-        <div className={classes.root} id='about'>
+        <div className={classes.root} id='index'>
             <Grid container direction="row" justify="center" alignItems="center" spacing={3}>
+                {/*--------------------------------------------- INTRO SECTION ------------------------------------------------ */}
                 <Grid item xs={12} md={6}>
                     <img src="/images/portfolio.png" style={{width:'100%'}}/>
                 </Grid>
@@ -183,39 +234,101 @@ const IndexView = props => {
                     </Grid>
                     {/* <img src="/images/mahintariq.png" style={{width:'100%'}} /> */}
                 </Grid>
-                <Grid item container xs={12} direction="row" justify="center" alignItems="center" style={{marginBottom:'10px'}}>
-                    <Grid item container direction="row" justify="center" alignItems="center" xs={12} md={5} className={classes.projectback1}>
-                        <Paper  elevation={6} className={classes.paper} >
-                            <Typography variant="h6" component="h6">
-                                What makes me ME.
-                            </Typography>
-                            <Typography variant="p" component="p" style={{padding:'20px'}}>
-                                I began my career during my mid teens when I launched my first non-profit initiative, a charity organization called Little Worth a Soul. After recieving a very positive feedback from my community I realized my limitless potential. Since then I successfuly launched similar initiatives and have also organized events like TEDxRIT Dubai. Now after completing my bachelors I am starting my career as a Business Developer.  
-                            </Typography>
-                            <Typography variant="p" component="p" style={{padding:'20px'}}>
-                                I aspire to deliver meaning and add value wherever I go. My goal is to continue my career in Business Development while working on my passion projects on the side.   
-                            </Typography>
-                            <Typography variant="p" component="p" style={{padding:'20px'}}>
-                                Why do I work so hard ? I believe that in order to stand out in the market and be successful I have to diversify my skill set. Everyday I learn something new and this is what keeps me at my best. I know if I can benefit the world with posititve initiatives, I can bring similar energy to my workplace. 
-                            </Typography>
-                            <Typography variant="p" component="p" style={{padding:'20px'}}>
-                                Learn about my projects and how it has developed me.
-                            </Typography>
-                        </Paper>
+                {/*--------------------------------------------- PROJECTS SECTION ------------------------------------------------ */}
+                {width < breakpoint ?
+                    <Grid item container xs={12} direction="row" justify="center" alignItems="center" style={{marginBottom:'10px'}}>
+                        <Grid item container direction="row" justify="center" alignItems="center" xs={12} md={5} className={classes.projectback1mobile}>
+                            <Paper  elevation={6} className={classes.paper} >
+                                <Typography variant="h6" component="h6">
+                                    What makes me ME.
+                                </Typography>
+                                <Typography variant="p" component="p" style={{padding:'20px'}}>
+                                    I began my career during my mid teens when I launched my first non-profit initiative, a charity organization called Little Worth a Soul. After recieving a very positive feedback from my community I realized my limitless potential. Since then I successfuly launched similar initiatives and have also organized events like TEDxRIT Dubai. Now after completing my bachelors I am starting my career as a Business Developer.  
+                                </Typography>
+                                <Typography variant="p" component="p" style={{padding:'20px'}}>
+                                    I aspire to deliver meaning and add value wherever I go. My goal is to continue my career in Business Development while working on my passion projects on the side.   
+                                </Typography>
+                                <Typography variant="p" component="p" style={{padding:'20px'}}>
+                                    Why do I work so hard ? I believe that in order to stand out in the market and be successful I have to diversify my skill set. Everyday I learn something new and this is what keeps me at my best. I know if I can benefit the world with posititve initiatives, I can bring similar energy to my workplace. 
+                                </Typography>
+                                <Typography variant="p" component="p" style={{padding:'20px'}}>
+                                    Learn about my projects and how it has developed me.
+                                </Typography>
+                            </Paper>
+                        </Grid>
+                        <Grid item container xs={12} md={6} spacing={3} direction="row" justify="space-evenly" alignItems="center" className={classes.projectback2mobile}>
+                            <Button variant="contained" className={classes.artmobile} onClick={()=>navigate('/art')}>
+                                Art
+                            </Button>
+                            <Button variant="contained" className={classes.littleworthasoulmobile} onClick={()=>navigate('/littleworthasoul')}>
+                                Little Worth a Soul
+                            </Button>
+                            <Button variant="contained" className={classes.tedxmobile} onClick={()=>navigate('/tedx')}>
+                                TEDx
+                            </Button>
+                        </Grid>
                     </Grid>
-                    <Grid item container xs={12} md={6} spacing={3} direction="row" justify="space-evenly" alignItems="center" className={classes.projectback2}>
-                        <Button variant="contained" className={classes.art} onClick={()=>navigate('/art')}>
-                            Art
-                        </Button>
-                        <Button variant="contained" className={classes.littleworthasoul} onClick={()=>navigate('/littleworthasoul')}>
-                            Little Worth a Soul
-                        </Button>
-                        <Button variant="contained" className={classes.tedx} onClick={()=>navigate('/tedx')}>
-                            TEDx
-                        </Button>
+                :
+                    <Grid item container xs={12} direction="row" justify="center" alignItems="center" style={{marginBottom:'10px'}}>
+                        <Grid item container direction="row" justify="center" alignItems="center" xs={12} md={5} className={classes.projectback1}>
+                            <Paper  elevation={6} className={classes.paper} >
+                                <Typography variant="h6" component="h6">
+                                    What makes me ME.
+                                </Typography>
+                                <Typography variant="p" component="p" style={{padding:'20px'}}>
+                                    I began my career during my mid teens when I launched my first non-profit initiative, a charity organization called Little Worth a Soul. After recieving a very positive feedback from my community I realized my limitless potential. Since then I successfuly launched similar initiatives and have also organized events like TEDxRIT Dubai. Now after completing my bachelors I am starting my career as a Business Developer.  
+                                </Typography>
+                                <Typography variant="p" component="p" style={{padding:'20px'}}>
+                                    I aspire to deliver meaning and add value wherever I go. My goal is to continue my career in Business Development while working on my passion projects on the side.   
+                                </Typography>
+                                <Typography variant="p" component="p" style={{padding:'20px'}}>
+                                    Why do I work so hard ? I believe that in order to stand out in the market and be successful I have to diversify my skill set. Everyday I learn something new and this is what keeps me at my best. I know if I can benefit the world with posititve initiatives, I can bring similar energy to my workplace. 
+                                </Typography>
+                                <Typography variant="p" component="p" style={{padding:'20px'}}>
+                                    Learn about my projects and how it has developed me.
+                                </Typography>
+                            </Paper>
+                        </Grid>
+                        <Grid item container xs={12} md={6} spacing={3} direction="row" justify="space-evenly" alignItems="center" className={classes.projectback2}>
+                            <Button variant="contained" className={classes.art} onClick={()=>navigate('/art')}>
+                                Art
+                            </Button>
+                            <Button variant="contained" className={classes.littleworthasoul} onClick={()=>navigate('/littleworthasoul')}>
+                                Little Worth a Soul
+                            </Button>
+                            <Button variant="contained" className={classes.tedx} onClick={()=>navigate('/tedx')}>
+                                TEDx
+                            </Button>
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid item container xs={12} >
+                }
+                {/*--------------------------------------------- WORK EXPERIENCE SECTION ------------------------------------------------ */}
+                
+                {width < breakpoint ?
+                    <Grid item container xs={12}  style={{padding:'0px', marginTop:'100px'}}>
+                        <Grid item container sm={12} md={6} className={classes.workback1mobile} >
+                        </Grid>
+                        <Grid item container sm={12} md={6} className={classes.workback2mobile} direction="row" justify="center" alignItems="center">
+                            <Grid item className={classes.workexpmobile} >
+                                <Typography variant="h4" component="h3">
+                                    Work Experience
+                                </Typography>
+                                <Typography component="p">
+                                    I took my first corporate job which begun as an internship during my second year of college, at Pinnacle Middle East. I continued working part time as a full time student at RIT.
+                                    At Pinnacle, I started as a Telesales Marketing intern and grew into a business development representative during my 1.5 years there. I highly enjoyed sales, and talking to people and the art of making conversation and selling. 
+                                    I’ve worked on projects with organisations like Zendesk, IBM, SAP and Oracle, across Middle East and South Africa.
+                                    Shortly after leaving Dubai, I joined another marketing company called Elev8 and quickly got promoted to an Account manager working with AT&T. 
+                                    Throughout my sales career in the past 2-3 years, I have developed my personality, learnt what it means to be self driven, self motivated and highly passionate to deliver the best results.
+                                    I know I can add value to your customers, current employees and the company culture.
+                                </Typography>
+                                <Button variant="contained" className={classes.resumebtn} onClick={()=>navigate('https://drive.google.com/file/d/1SJa0_C9CD9SKJHs_mmDesN62NfDEecCX/view?usp=sharing')}>
+                                    Download Resume
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    :
+                    <Grid item container xs={12}  style={{padding:'0px', marginTop:'180px'}}>
                     <Grid item container sm={12} md={6} className={classes.workback1} >
                     </Grid>
                     <Grid item container sm={12} md={6} className={classes.workback2} direction="row" justify="center" alignItems="center">
@@ -231,24 +344,13 @@ const IndexView = props => {
                                 Throughout my sales career in the past 2-3 years, I have developed my personality, learnt what it means to be self driven, self motivated and highly passionate to deliver the best results.
                                 I know I can add value to your customers, current employees and the company culture.
                             </Typography>
-                            <Link
-                                href=""
-                                component="button"
-                                variant="body2"
-                                onClick={() => {
-                                    console.info("I'm a button.");
-                                }}
-                                >
+                            <Button variant="contained" className={classes.resumebtn} onClick={()=>navigate('https://drive.google.com/file/d/1SJa0_C9CD9SKJHs_mmDesN62NfDEecCX/view?usp=sharing')}>
                                 Download Resume
-                            </Link>
+                            </Button>
                         </Grid>
                     </Grid>
-                </Grid>
-                <Grid item xs={12} className={classes.footer} >
-                    <Typography variant="p" component="p">
-                        Copywrite mahintariq.com 2020  
-                    </Typography>
-                </Grid>
+                    </Grid>
+                }
             </Grid>
         </div>
     )
