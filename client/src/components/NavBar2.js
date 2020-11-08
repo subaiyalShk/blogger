@@ -103,21 +103,18 @@ export default function ButtonAppBar(props) {
                     <Divider/>
                     <List>
                     <ListItem button>
-                        <IconButton style={{color:'black'}}  >
+                        <IconButton style={{color:'black'}} onClick={()=>navigate('https://www.facebook.com/mahin.sheikh3')} >
                             <FacebookIcon/>
                         </IconButton>
-                        <IconButton  style={{color:'black'}}  >
+                        <IconButton  style={{color:'black'}} onClick={()=>navigate('https://instagram.com/maahin.sheikh?igshid=6pg66gah1zp9')} >
                             <InstagramIcon/>
                         </IconButton>
-                        <IconButton style={{color:'black'}}  >
+                        <IconButton style={{color:'black'}} onClick={()=>navigate('http://linkedin.com/in/mahin-tariq-947760170')} >
                             <LinkedInIcon/>
                         </IconButton>
-                        <IconButton  style={{color:'black'}}  >
+                        <IconButton  style={{color:'black'}} onClick={()=>navigate('http://www.pinterest.com/Maahintariq')}  >
                             <PinterestIcon/>
-                        </IconButton>
-                        <IconButton style={{color:'black'}} onClick={() => {navigate("/category/")}} >
-                            <TwitterIcon/>
-                        </IconButton>            
+                        </IconButton>           
                     </ListItem>  
                 </List>
                 </div>
