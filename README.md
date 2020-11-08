@@ -1,6 +1,6 @@
 # Portfolio site for a Client      
 ![ReactJS Resume Website Template](display.gif?raw=true "ReactJS Resume Website Template")
-### <a href="https://react-resume-template.herokuapp.com/">LIVE DEMO</a> 
+### <a href="https://mahintariq.com/">LIVE DEMO</a> 
 
 ## Description
 This is a React + Node + express + mongoDB based personal resume website template. This may be abit of an over kill but I do plan on customizing the dashboard later on but for now I have given it a terminal style dashboard and login. Authentication is handled using JSONWeb tokens. This was originaly just a React based app by <a href="https://github.com/tbakerx/react-resume-template">Tim Baker</a>. Most of the componenets have been converted to functions and added some styling and animations to this project. Scroll based animations are also added in client/public/js/init.js which use jquery. This app is fully responsive and you can turn this into your own resume by modifying client/public/resumeData.json. More details on how to setup and turn it into your resume can be found below.
