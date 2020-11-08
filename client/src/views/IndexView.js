@@ -12,6 +12,7 @@ import BlogCard from '../components/Card';
 import Link from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
 import {navigate} from '@reach/router';
+import TextField from '@material-ui/core/TextField';
 
 
 
@@ -146,7 +147,25 @@ const IndexView = props => {
             top:'-82px'
 
         },
-//  Styles for mobile site
+        call2action:{
+            backgroundColor:'black',
+            color:'white',
+            height:'315px',
+            width:'100%',
+            position: 'absolute',
+            bottom:'0px',
+            right:'0px',
+            paddingLeft:'70px',
+        },
+        inputs:{
+            backgroundColor:'white',
+            width:'320.2px',
+            marginBottom:'5px',
+            padding:'30px',
+            marginLeft:'30px',
+            height:'315px'
+        },
+//                                                       Styles for mobile site
         projectback1mobile:{
             background: 'url(/images/projectback1.png)',
             backgroundSize: '100%',
@@ -205,6 +224,15 @@ const IndexView = props => {
             position:'absolute',
             width:'420px',
             top:'50px'
+        },
+        call2actionmobile:{
+            backgroundColor:'black',
+            color:'white',
+            height:'200px',
+            width:'670px',
+            position: 'absolute',
+            bottom:'20px',
+            right:'60px'
         }
     }));
     const classes = useStyles();
@@ -325,30 +353,38 @@ const IndexView = props => {
                                     Download Resume
                                 </Button>
                             </Grid>
+                            <Grid item container className={classes.call2actionmobile} >
+                                <Grid item>
+                                    
+                                </Grid>
+                                <Grid item>
+
+                                </Grid>
+                            </Grid>
                         </Grid>
                     </Grid>
                     :
                     <Grid item container xs={12}  style={{padding:'0px', marginTop:'180px'}}>
-                    <Grid item container sm={12} md={6} className={classes.workback1} >
-                    </Grid>
-                    <Grid item container sm={12} md={6} className={classes.workback2} direction="row" justify="center" alignItems="center">
-                        <Grid item className={classes.workexp} >
-                            <Typography variant="h4" component="h3">
-                                Work Experience
-                            </Typography>
-                            <Typography component="p">
-                                I took my first corporate job which begun as an internship during my second year of college, at Pinnacle Middle East. I continued working part time as a full time student at RIT.
-                                At Pinnacle, I started as a Telesales Marketing intern and grew into a business development representative during my 1.5 years there. I highly enjoyed sales, and talking to people and the art of making conversation and selling. 
-                                I’ve worked on projects with organisations like Zendesk, IBM, SAP and Oracle, across Middle East and South Africa.
-                                Shortly after leaving Dubai, I joined another marketing company called Elev8 and quickly got promoted to an Account manager working with AT&T. 
-                                Throughout my sales career in the past 2-3 years, I have developed my personality, learnt what it means to be self driven, self motivated and highly passionate to deliver the best results.
-                                I know I can add value to your customers, current employees and the company culture.
-                            </Typography>
-                            <Button variant="contained" className={classes.resumebtn} onClick={()=>navigate('https://drive.google.com/file/d/1SJa0_C9CD9SKJHs_mmDesN62NfDEecCX/view?usp=sharing')}>
-                                Download Resume
-                            </Button>
+                        <Grid item container sm={12} md={6} className={classes.workback1} >
                         </Grid>
-                    </Grid>
+                        <Grid item container sm={12} md={6} className={classes.workback2} direction="row" justify="center" alignItems="center">
+                            <Grid item className={classes.workexp} >
+                                <Typography variant="h4" component="h3">
+                                    Work Experience
+                                </Typography>
+                                <Typography component="p">
+                                    I took my first corporate job which begun as an internship during my second year of college, at Pinnacle Middle East. I continued working part time as a full time student at RIT.
+                                    At Pinnacle, I started as a Telesales Marketing intern and grew into a business development representative during my 1.5 years there. I highly enjoyed sales, and talking to people and the art of making conversation and selling. 
+                                    I’ve worked on projects with organisations like Zendesk, IBM, SAP and Oracle, across Middle East and South Africa.
+                                    Shortly after leaving Dubai, I joined another marketing company called Elev8 and quickly got promoted to an Account manager working with AT&T. 
+                                    Throughout my sales career in the past 2-3 years, I have developed my personality, learnt what it means to be self driven, self motivated and highly passionate to deliver the best results.
+                                    I know I can add value to your customers, current employees and the company culture.
+                                </Typography>
+                                <Button variant="contained" className={classes.resumebtn} onClick={()=>navigate('https://drive.google.com/file/d/1SJa0_C9CD9SKJHs_mmDesN62NfDEecCX/view?usp=sharing')}>
+                                    Download Resume
+                                </Button>
+                            </Grid>
+                        </Grid>
                     </Grid>
                 }
             </Grid>

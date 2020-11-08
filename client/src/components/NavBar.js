@@ -42,15 +42,17 @@ export default function ButtonAppBar(props) {
         title: {
             flexGrow: 1,
         },
+        navi:{
+            width:'590px'
+        }
     }));
     const classes = useStyles();
 
     return (
         <div id='navbar' >
             <Grid container spacing={3} className={classes.root} direction="row" justify="space-between" alignItems="baseline">
-                <Grid item spacing={3}>
-                    <Grid container spacing={3}>
-                        <Grid item>
+                <Grid item container spacing={3} className={classes.navi}>
+                    <Grid item>
                         <Link
                             component="button"
                             variant="body2"
@@ -61,43 +63,42 @@ export default function ButtonAppBar(props) {
                             >
                             About
                         </Link>
-                        </Grid>
-                            <Grid item>
-                                <Link
-                                    component="button"
-                                    variant="body2"
-                                    style={{color:'white'}}
-                                    onClick={() => {
-                                        navigate("/littleworthasoul")
-                                    }}
-                                    >
-                                    Little Worth a Soul
-                                </Link>
-                            </Grid>
-                            <Grid item>
-                                <Link
-                                    component="button"
-                                    variant="body2"
-                                    style={{color:'white'}}
-                                    onClick={() => {
-                                        navigate("/tedx")
-                                    }}
-                                    >
-                                    TEDx
-                                </Link>
-                            </Grid>
-                            <Grid item>
-                                <Link
-                                    component="button"
-                                    variant="body2"
-                                    style={{color:'white'}}
-                                    onClick={() => {
-                                        navigate("/art")
-                                    }}
-                                    >
-                                    Art
-                                </Link>
-                            </Grid>
+                    </Grid>
+                    <Grid item>
+                        <Link
+                            component="button"
+                            variant="body2"
+                            style={{color:'white'}}
+                            onClick={() => {
+                                navigate("/littleworthasoul")
+                            }}
+                            >
+                            Little Worth a Soul
+                        </Link>
+                    </Grid>
+                    <Grid item>
+                        <Link
+                            component="button"
+                            variant="body2"
+                            style={{color:'white'}}
+                            onClick={() => {
+                                navigate("/tedx")
+                            }}
+                            >
+                            TEDx
+                        </Link>
+                    </Grid>
+                    <Grid item>
+                        <Link
+                            component="button"
+                            variant="body2"
+                            style={{color:'white'}}
+                            onClick={() => {
+                                navigate("/art")
+                            }}
+                            >
+                            Art
+                        </Link>
                     </Grid>
                 </Grid>
                 <Grid item >

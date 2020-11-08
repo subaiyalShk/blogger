@@ -7,7 +7,7 @@ import NavBar1 from './components/NavBar'
 import NavBar2 from './components/NavBar2'
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
+import {Typography, button, TextField, Button} from '@material-ui/core';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import BlogsView from './views/BlogView';
@@ -41,7 +41,47 @@ function App() {
       height:'120px',
       size:'155px',
       paddingTop:'40px'
-    }
+    },
+    footer:{
+      backgroundColor:'black',
+      height:'130px',
+      color:'white',
+      position:'relative'
+    },
+    call2action:{
+      backgroundColor:'black',
+      color:'white',
+      height:'315px',
+      width:'618px',
+      position: 'absolute',
+      bottom:'0px',
+      right:'0px',
+      paddingLeft:'70px',
+  },
+  inputs:{
+      backgroundColor:'white',
+      width:'320.2px',
+      marginBottom:'5px',
+      padding:'30px',
+      marginLeft:'30px',
+      height:'315px'
+  },
+  resumebtn:{
+    backgroundColor:'black',
+    color:'white'
+  },
+  email:{
+    position:'relative',
+    left:'80px'
+  },
+  inputsmobile:{
+    backgroundColor:'white',
+    width:'300px',
+    marginBottom:'5px',
+    padding:'30px',
+    marginLeft:'50px',
+    height:'315px'
+  }
   }));
   const classes = useStyles();
   
@@ -69,6 +109,69 @@ function App() {
           </Grid>
         </Grid>
       </Container>
+      {width < breakpoint ? 
+        <Grid container className={classes.footer} direction="row" justify="center" alignItems="center">
+          <Grid item>
+            <Typography variant="p" component="p" style={{marginBottom:'15px'}} >
+                Thank you !
+            </Typography>
+          </Grid>
+          <Grid item container className={classes.call2action} direction="row" justify="flex-start" alignItems="flex-start"  >
+            <Grid item style={{paddingRight:'40px', paddingTop:'90px'}} className={classes.email}>
+                <Typography variant="p" component="p">
+                    Mahin Tariq
+                </Typography>       
+                <Typography variant="p" component="p">
+                    mahin.tariqs@gmail.com
+                </Typography>                     
+            </Grid>
+            <Grid item container className={classes.inputsmobile}>
+              <Grid item>
+                  <TextField id="outlined-basic" label="Your email" variant="outlined" className={classes.inputs2} />
+              </Grid>
+              <Grid item>
+                  <TextField id="outlined-basic" label="Message" multiline rows={4} variant="outlined" className={classes.inputs2} />
+              </Grid>
+              <Grid item>
+                  <Button variant="contained" className={classes.resumebtn} onClick={()=>navigate('https://drive.google.com/file/d/1SJa0_C9CD9SKJHs_mmDesN62NfDEecCX/view?usp=sharing')}>
+                      Say Hi!
+                  </Button>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      :
+        <Grid container className={classes.footer} direction="row" justify="center" alignItems="center">
+          <Grid item>
+            <Typography variant="p" component="p" style={{marginBottom:'15px'}} >
+                Thank you !
+            </Typography>
+          </Grid>
+          <Grid item container className={classes.call2action} direction="row" justify="flex-start" alignItems="flex-start"  >
+              <Grid item style={{paddingRight:'40px', paddingTop:'90px'}}>
+                  <Typography variant="p" component="p">
+                      Mahin Tariq
+                  </Typography>       
+                  <Typography variant="p" component="p">
+                      mahin.tariqs@gmail.com
+                  </Typography>                     
+              </Grid>
+              <Grid item container className={classes.inputs}>
+                <Grid item>
+                    <TextField id="outlined-basic" label="Your email" variant="outlined" className={classes.inputs2} />
+                </Grid>
+                <Grid item>
+                    <TextField id="outlined-basic" label="Message" multiline rows={4} variant="outlined" className={classes.inputs2} />
+                </Grid>
+                <Grid item>
+                    <Button variant="contained" className={classes.resumebtn} onClick={()=>navigate('https://drive.google.com/file/d/1SJa0_C9CD9SKJHs_mmDesN62NfDEecCX/view?usp=sharing')}>
+                        Say Hi!
+                    </Button>
+                </Grid>
+              </Grid>
+          </Grid>
+        </Grid>
+      }
     </div>
   );
 }
