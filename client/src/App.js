@@ -21,7 +21,7 @@ import {navigate} from '@reach/router';
 
 function App() {
   const [width, setWidth] = React.useState(window.innerWidth);
-  const breakpoint = 820;
+  const breakpoint = 520;
 
   React.useEffect(() => {
   const handleWindowResize = () => setWidth(window.innerWidth)
@@ -74,12 +74,19 @@ function App() {
     position:'relative',
     left:'80px'
   },
+  footermobile:{
+    backgroundColor:'black',
+    height:'230px',
+    color:'white',
+    position:'relative',
+    marginTop:'40px'
+  },
   inputsmobile:{
     backgroundColor:'white',
     width:'300px',
     marginBottom:'5px',
     padding:'30px',
-    marginLeft:'50px',
+    marginLeft:'250px',
     height:'315px'
   }
   }));
@@ -110,22 +117,28 @@ function App() {
         </Grid>
       </Container>
       {width < breakpoint ? 
-        <Grid container className={classes.footer} direction="row" justify="center" alignItems="center">
+        <Grid container className={classes.footermobile} direction="row" justify="center" alignItems="center">
           <Grid item>
             <Typography variant="p" component="p" style={{marginBottom:'15px'}} >
                 Thank you !
             </Typography>
           </Grid>
           <Grid item container className={classes.call2action} direction="row" justify="flex-start" alignItems="flex-start"  >
-            <Grid item style={{paddingRight:'40px', paddingTop:'90px'}} className={classes.email}>
+            <Grid item style={{paddingRight:'40px', paddingTop:'0px'}} className={classes.email}>
                 <Typography variant="p" component="p">
-                    Mahin Tariq
+                    .
                 </Typography>       
                 <Typography variant="p" component="p">
-                    mahin.tariqs@gmail.com
+                    ..
                 </Typography>                     
             </Grid>
             <Grid item container className={classes.inputsmobile}>
+              <Typography variant="p" component="p" style={{color:'black'}}>
+                  To:
+              </Typography>       
+              <Typography variant="p" component="p" style={{color:'black'}}>
+                  mahin.tariqs@gmail.com
+              </Typography>   
               <Grid item>
                   <TextField id="outlined-basic" label="Your email" variant="outlined" className={classes.inputs2} />
               </Grid>
@@ -157,6 +170,7 @@ function App() {
                   </Typography>                     
               </Grid>
               <Grid item container className={classes.inputs}>
+                
                 <Grid item>
                     <TextField id="outlined-basic" label="Your email" variant="outlined" className={classes.inputs2} />
                 </Grid>

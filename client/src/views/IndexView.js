@@ -172,57 +172,58 @@ const IndexView = props => {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             height:'730px',
-            margin:'15px'
+            marginTop:'45px',
         },
         projectback2mobile:{
             background: 'url(/images/projectback2.png)',
             backgroundSize: '100%',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            height:'640px',
+            height:'320px',
             padding:'25px',
             marginLeft:'5px',
-            position:'relative'
+            position:'relative',
+            marginTop:'170px'
         },
         littleworthasoulmobile:{
             backgroundColor:'black',
             color:'white',
             position:'absolute',
-            top:'120px',
-            left:'230px'
+            top:'19px',
+            left:'130px'
         },
         artmobile:{
             backgroundColor:'black',
             color:'white',
             position:'absolute',
-            bottom:'90px',
-            left:'190px'
+            bottom:'50px',
+            left:'90px'
         },
         tedxmobile:{
             backgroundColor:'black',
             color:'white',
             position:'absolute',
-            top:'280px',
-            left:'360px'
+            bottom:'150px',
+            right:'30px'
         },
         workback1mobile:{
             background: 'url(/images/workback1.png)',
             backgroundSize: '100%',
             backgroundPosition: 'bottom',
             backgroundRepeat: 'no-repeat',
-            height:'530px',
+            height:'430px',
         },
         workback2mobile:{
             background: 'url(/images/workback2.png)',
             backgroundSize: '100%',
             backgroundPosition: 'bottom',
             backgroundRepeat: 'no-repeat',
-            height:'870px',
+            height:'970px',
             position:'relative'
         },
         workexpmobile:{
             position:'absolute',
-            width:'420px',
+            width:'320px',
             top:'50px'
         },
         call2actionmobile:{
@@ -231,8 +232,8 @@ const IndexView = props => {
             height:'200px',
             width:'670px',
             position: 'absolute',
-            bottom:'20px',
-            right:'60px'
+            bottom:'0px',
+            right:'0px'
         }
     }));
     const classes = useStyles();
