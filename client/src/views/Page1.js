@@ -19,6 +19,10 @@ const DetailView = props => {
             .catch(err=>{
                 console.log(err);
             })
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
         }, [])
 
     const useStyles = makeStyles((theme) => ({

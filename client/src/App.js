@@ -75,10 +75,10 @@ function App() {
   },
   footermobile:{
     backgroundColor:'black',
-    height:'230px',
+    height:'670px',
     color:'white',
     position:'relative',
-    marginTop:'40px'
+    padding:'30px'
   },
   email:{
     position:'relative',
@@ -88,11 +88,9 @@ function App() {
   },
   inputsmobile:{
     backgroundColor:'white',
-    width:'300px',
-    marginBottom:'5px',
-    padding:'30px',
-    marginLeft:'250px',
-    height:'315px'
+    width:'370px',
+    padding:'50px',
+    height:'375px'
   }
   }));
   const classes = useStyles();
@@ -123,27 +121,24 @@ function App() {
       </Container>
       {width < breakpoint ? 
         <div id='footer' >
-          <Grid container className={classes.footermobile} direction="row" justify="center" alignItems="center">
-            <Grid item>
-              <Typography variant="p" component="p" style={{marginBottom:'15px'}} >
-                  Created with love by www.subaiyal.sh
-              </Typography>
-            </Grid>
-            <Grid item container className={classes.call2action} direction="row" justify="flex-start" alignItems="flex-start"  >
-              <Grid item style={{paddingRight:'40px', paddingTop:'0px'}} className={classes.email}>     
+          <Grid container className={classes.footermobile}
+            direction="column"
+            justify="space-between"
+            alignItems="center"
+            >
+              <Grid item >     
                 <Typography variant="h5" component="h5">
-                    Lets Chat! 
+                  Lets Chat! 
                 </Typography>
                 <Typography variant="p" component="p">
-                      Mahin Tariq
-                  </Typography>       
-                  <Typography variant="p" component="p">
-                      mahin.tariqs@gmail.com
-                  </Typography>
-                  <Typography variant="p" component="p">
-                      1601 Elm St Floor 33, Dallas, TX 75201
-                  </Typography>
-                     
+                    Mahin Tariq
+                </Typography>       
+                <Typography variant="p" component="p">
+                    mahin.tariqs@gmail.com
+                </Typography>
+                <Typography variant="p" component="p">
+                    1601 Elm St Floor 33, Dallas, TX 75201
+                </Typography>
               </Grid>
               <Grid item container className={classes.inputsmobile}>
                 <Typography variant="p" component="p" style={{color:'black'}}>
@@ -153,10 +148,10 @@ function App() {
                     mahin.tariqs@gmail.com
                 </Typography>   
                 <Grid item>
-                    <TextField id="outlined-basic" label="Your email" variant="outlined" className={classes.inputs2} />
+                    <TextField fullWidth id="outlined-basic" label="Your email" variant="outlined" className={classes.inputs2} />
                 </Grid>
                 <Grid item>
-                    <TextField id="outlined-basic" label="Message" multiline rows={4} variant="outlined" className={classes.inputs2} />
+                    <TextField fullWidth id="outlined-basic" label="Message" multiline rows={4} variant="outlined" className={classes.inputs2} />
                 </Grid>
                 <Grid item>
                     <Button variant="contained" className={classes.resumebtn} onClick={()=>navigate('https://drive.google.com/file/d/1SJa0_C9CD9SKJHs_mmDesN62NfDEecCX/view?usp=sharing')}>
@@ -164,7 +159,11 @@ function App() {
                     </Button>
                 </Grid>
               </Grid>
-            </Grid>
+              <Grid item>
+                <Typography variant="p" component="p">
+                  <FavoriteIcon/> Made with Love by <a style ={{color:'white'}} href='https://www.subaiyal.sh'>www.subaiyal.sh</a>
+                </Typography>
+              </Grid>
           </Grid>
         </div>
       :

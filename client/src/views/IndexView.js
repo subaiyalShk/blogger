@@ -368,14 +368,6 @@ const IndexView = props => {
                                     Download Resume
                                 </Button>
                             </Grid>
-                            <Grid item container className={classes.call2actionmobile} >
-                                <Grid item>
-                                    
-                                </Grid>
-                                <Grid item>
-
-                                </Grid>
-                            </Grid>
                         </Grid>
                     </Grid>
                     :
