@@ -4,7 +4,7 @@ import { Router } from '@reach/router';
 import IndexView from './views/IndexView';
 import './App.css';
 import NavBar1 from './components/NavBar'
-import NavBar2 from './components/NavBar2'
+import NavBar2 from './components/NavBar2';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {Typography, button, TextField, Button} from '@material-ui/core';
@@ -16,6 +16,8 @@ import Page1 from './views/Page1';
 import Page2 from './views/Page2';
 import Page3 from './views/Page3';
 import {navigate} from '@reach/router';
+import ScrollTobtn from './components/Scrolltobtn';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 
 
@@ -24,11 +26,11 @@ function App() {
   const breakpoint = 520;
 
   React.useEffect(() => {
-  const handleWindowResize = () => setWidth(window.innerWidth)
-  window.addEventListener("resize", handleWindowResize);
+    const handleWindowResize = () => setWidth(window.innerWidth)
+    window.addEventListener("resize", handleWindowResize);
 
-  // Return a function from the effect that removes the event listener
-  return () => window.removeEventListener("resize", handleWindowResize);
+    // Return a function from the effect that removes the event listener
+    return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
 
   const useStyles = makeStyles((theme) => ({
@@ -46,13 +48,14 @@ function App() {
       backgroundColor:'black',
       height:'130px',
       color:'white',
-      position:'relative'
+      position:'relative',
+      paddingLeft:'30%'
     },
     call2action:{
       backgroundColor:'black',
       color:'white',
       height:'315px',
-      width:'618px',
+      width:'713px',
       position: 'absolute',
       bottom:'0px',
       right:'0px',
@@ -70,17 +73,18 @@ function App() {
     backgroundColor:'#F3C6CC',
     color:'black'
   },
-  email:{
-    position:'relative',
-    left:'280px',
-    top:'-100px'
-  },
   footermobile:{
     backgroundColor:'black',
     height:'230px',
     color:'white',
     position:'relative',
     marginTop:'40px'
+  },
+  email:{
+    position:'relative',
+    left:'290px',
+    top:'-120px',
+    height:'10px',
   },
   inputsmobile:{
     backgroundColor:'white',
@@ -118,54 +122,74 @@ function App() {
         </Grid>
       </Container>
       {width < breakpoint ? 
-        <Grid container className={classes.footermobile} direction="row" justify="center" alignItems="center">
-          <Grid item>
-            <Typography variant="p" component="p" style={{marginBottom:'15px'}} >
-                Thank you !
-            </Typography>
-          </Grid>
-          <Grid item container className={classes.call2action} direction="row" justify="flex-start" alignItems="flex-start"  >
-            <Grid item style={{paddingRight:'40px', paddingTop:'0px'}} className={classes.email}>     
-              <Typography variant="h5" component="h5">
-                  Lets Chat! 
-              </Typography>                     
+        <div id='footer' >
+          <Grid container className={classes.footermobile} direction="row" justify="center" alignItems="center">
+            <Grid item>
+              <Typography variant="p" component="p" style={{marginBottom:'15px'}} >
+                  Created with love by www.subaiyal.sh
+              </Typography>
             </Grid>
-            <Grid item container className={classes.inputsmobile}>
-              <Typography variant="p" component="p" style={{color:'black'}}>
-                  To:
-              </Typography>       
-              <Typography variant="p" component="p" style={{color:'black'}}>
-                  mahin.tariqs@gmail.com
-              </Typography>   
-              <Grid item>
-                  <TextField id="outlined-basic" label="Your email" variant="outlined" className={classes.inputs2} />
+            <Grid item container className={classes.call2action} direction="row" justify="flex-start" alignItems="flex-start"  >
+              <Grid item style={{paddingRight:'40px', paddingTop:'0px'}} className={classes.email}>     
+                <Typography variant="h5" component="h5">
+                    Lets Chat! 
+                </Typography>
+                <Typography variant="p" component="p">
+                      Mahin Tariq
+                  </Typography>       
+                  <Typography variant="p" component="p">
+                      mahin.tariqs@gmail.com
+                  </Typography>
+                  <Typography variant="p" component="p">
+                      1601 Elm St Floor 33, Dallas, TX 75201
+                  </Typography>
+                     
               </Grid>
-              <Grid item>
-                  <TextField id="outlined-basic" label="Message" multiline rows={4} variant="outlined" className={classes.inputs2} />
-              </Grid>
-              <Grid item>
-                  <Button variant="contained" className={classes.resumebtn} onClick={()=>navigate('https://drive.google.com/file/d/1SJa0_C9CD9SKJHs_mmDesN62NfDEecCX/view?usp=sharing')}>
-                      Say Hi!
-                  </Button>
+              <Grid item container className={classes.inputsmobile}>
+                <Typography variant="p" component="p" style={{color:'black'}}>
+                    To:
+                </Typography>       
+                <Typography variant="p" component="p" style={{color:'black'}}>
+                    mahin.tariqs@gmail.com
+                </Typography>   
+                <Grid item>
+                    <TextField id="outlined-basic" label="Your email" variant="outlined" className={classes.inputs2} />
+                </Grid>
+                <Grid item>
+                    <TextField id="outlined-basic" label="Message" multiline rows={4} variant="outlined" className={classes.inputs2} />
+                </Grid>
+                <Grid item>
+                    <Button variant="contained" className={classes.resumebtn} onClick={()=>navigate('https://drive.google.com/file/d/1SJa0_C9CD9SKJHs_mmDesN62NfDEecCX/view?usp=sharing')}>
+                        Say Hi!
+                    </Button>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
+        </div>
       :
-        <Grid container className={classes.footer} direction="row" justify="center" alignItems="center">
+        <div id='footer'>
+        <Grid container className={classes.footer} direction="row" justify="space-between"  alignItems="center">
           <Grid item>
             <Typography variant="p" component="p" style={{marginBottom:'15px'}} >
-                Thank you !
+              <FavoriteIcon style={{marginRight:'10px'}}/> Made with Love by <a>www.subaiyal.sh</a>
             </Typography>
           </Grid>
           <Grid item container className={classes.call2action} direction="row" justify="flex-start" alignItems="flex-start"  >
               <Grid item style={{paddingRight:'40px', paddingTop:'90px'}}>
+                  <Typography variant="h6" component="h6">
+                      Lets Chat!
+                  </Typography>
                   <Typography variant="p" component="p">
                       Mahin Tariq
                   </Typography>       
                   <Typography variant="p" component="p">
                       mahin.tariqs@gmail.com
-                  </Typography>                     
+                  </Typography>
+                  <Typography variant="p" component="p">
+                      1601 Elm St Floor 33, Dallas, TX 75201
+                  </Typography>
+
               </Grid>
               <Grid item container className={classes.inputs}>
                 
@@ -183,6 +207,7 @@ function App() {
               </Grid>
           </Grid>
         </Grid>
+        </div>
       }
     </div>
   );

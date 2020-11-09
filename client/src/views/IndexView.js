@@ -13,11 +13,24 @@ import Link from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
 import {navigate} from '@reach/router';
 import TextField from '@material-ui/core/TextField';
+import ScrollTobtn from '../components/Scrolltobtn';
 
 
 
 const IndexView = props => {
     const {width, breakpoint}= props;
+
+    // useEffect(() => {
+    //     const observer = new MutationObserver(getAnchorPoints);
+    //     observer.observe(document.getElementById('root'), {
+    //         childList: true,
+    //         subtree: true,
+    //         });
+    //         window.addEventListener('scroll', handleScroll);
+    //     }, []);  
+
+
+        
     const projects = [
         {
             imgUrl : '/images/art.jpg',
@@ -229,8 +242,8 @@ const IndexView = props => {
         call2actionmobile:{
             backgroundColor:'black',
             color:'white',
-            height:'200px',
-            width:'670px',
+            height:'250px',
+            width:'100%',
             position: 'absolute',
             bottom:'0px',
             right:'0px'
@@ -260,6 +273,7 @@ const IndexView = props => {
                         <Typography component="p">
                             I get work done.
                         </Typography>
+                        <ScrollTobtn itemName={'.footer'}/>
                     </Grid>
                     {/* <img src="/images/mahintariq.png" style={{width:'100%'}} /> */}
                 </Grid>

@@ -10,20 +10,13 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import PinterestIcon from '@material-ui/icons/Pinterest';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import {navigate} from '@reach/router';
+import Scrolltobtn from './Scrolltobtn';
+
 
 
 
 export default function ButtonAppBar(props) {
     const [categories, setCategories]=useState([{id:'1', title:'Art'}, {id:'2', title:'TEDx'}, {id:'3', title:'Little Worth a Soul'}])
-    useEffect(()=>{
-        axios.get('http://localhost:8000/api/categories')
-            .then((response)=>{
-                setCategories(response.data)
-            })
-            .catch(err=>{
-                console.log(err);
-            })
-        }, [])
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -44,6 +37,12 @@ export default function ButtonAppBar(props) {
         },
         navi:{
             width:'590px'
+        },
+        btn:{
+            color:'#F3C6CC',
+        },
+        link:{
+            color:'#F3C6CC',
         }
     }));
     const classes = useStyles();
@@ -102,20 +101,20 @@ export default function ButtonAppBar(props) {
                     </Grid>
                 </Grid>
                 <Grid item >
-                    <IconButton style={{color:'white'}} onClick={()=>navigate('https://www.facebook.com/mahin.sheikh3')}>
+                    <IconButton className={classes.btn} onClick={()=>navigate('https://www.facebook.com/mahin.sheikh3')}>
                         <FacebookIcon/>
                     </IconButton>
-                    <IconButton  style={{color:'white'}} onClick={()=>navigate('https://instagram.com/maahin.sheikh?igshid=6pg66gah1zp9')}>
-                        <InstagramIcon/>
+                    <IconButton  onClick={()=>navigate('https://instagram.com/maahin.sheikh?igshid=6pg66gah1zp9')}>
+                        <InstagramIcon className={classes.btn}/>
                     </IconButton>
-                    <IconButton style={{color:'white'}} onClick={()=>navigate('http://linkedin.com/in/mahin-tariq-947760170')}>
-                        <LinkedInIcon/>
+                    <IconButton  onClick={()=>navigate('http://linkedin.com/in/mahin-tariq-947760170')}>
+                        <LinkedInIcon className={classes.btn}/>
                     </IconButton>
-                    <IconButton  style={{color:'white'}} onClick={()=>navigate('http://www.pinterest.com/Maahintariq')}>
-                        <PinterestIcon/>
+                    <IconButton  onClick={()=>navigate('http://www.pinterest.com/Maahintariq')}>
+                        <PinterestIcon className={classes.btn}/>
                     </IconButton>
-                    <IconButton style={{color:'white'}} >
-                        <TwitterIcon/>
+                    <IconButton  >
+                        <TwitterIcon className={classes.btn}/>
                     </IconButton>
                 </Grid>
             </Grid>
