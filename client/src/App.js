@@ -23,6 +23,11 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 
 function App() {
   const [width, setWidth] = React.useState(window.innerWidth);
+  const [email, setEmail]=useState('')
+  const [message, setMessage]=useState('')
+  const [err, setErr]=useState('')
+  const [sent, setSent]=useState(false)
+
   const breakpoint = 520;
 
   React.useEffect(() => {
@@ -78,7 +83,8 @@ function App() {
     height:'670px',
     color:'white',
     position:'relative',
-    padding:'30px'
+    paddingTop:'40px',
+    paddingBottom:'40px'
   },
   email:{
     position:'relative',
@@ -94,6 +100,17 @@ function App() {
   }
   }));
   const classes = useStyles();
+  
+  function handleSubmit(event){
+    event.preventDefault();
+    setErr('');
+    axios.post('http://localhost:8000/api/email', {
+        email,
+        message
+    }, { withCredentials:true })
+    .then(()=>{ setSent(true);setEmail('');setMessage('')})
+    .catch(()=>setErr('Please check your credentials !'));
+  }
   
   return (
     <div className="App">
@@ -148,15 +165,21 @@ function App() {
                     mahin.tariqs@gmail.com
                 </Typography>   
                 <Grid item>
-                    <TextField fullWidth id="outlined-basic" label="Your email" variant="outlined" className={classes.inputs2} />
+                    <TextField value={email} fullWidth id="outlined-basic" label="Your email" variant="outlined" className={classes.inputs2} onChange={(e)=>{setEmail(e.target.value)}} />
                 </Grid>
                 <Grid item>
-                    <TextField fullWidth id="outlined-basic" label="Message" multiline rows={4} variant="outlined" className={classes.inputs2} />
+                    <TextField value={message} fullWidth id="outlined-basic" label="Message" multiline rows={4} variant="outlined" className={classes.inputs2} onChange={(e)=>{setMessage(e.target.value)}} />
                 </Grid>
                 <Grid item>
-                    <Button variant="contained" className={classes.resumebtn} onClick={()=>navigate('https://drive.google.com/file/d/1SJa0_C9CD9SKJHs_mmDesN62NfDEecCX/view?usp=sharing')}>
-                        Say Hi!
-                    </Button>
+                {sent? 
+                  <Button variant="contained" className={classes.resumebtn}>
+                    thank you!
+                  </Button>
+                  :
+                  <Button variant="contained" className={classes.resumebtn} onClick={handleSubmit}>
+                      Say Hi!
+                  </Button>
+                  }
                 </Grid>
               </Grid>
               <Grid item>
@@ -188,20 +211,24 @@ function App() {
                   <Typography variant="p" component="p">
                       1601 Elm St Floor 33, Dallas, TX 75201
                   </Typography>
-
               </Grid>
               <Grid item container className={classes.inputs}>
-                
                 <Grid item>
-                    <TextField id="outlined-basic" label="Your email" variant="outlined" className={classes.inputs2} />
+                    <TextField id="outlined-basic" label="Your email" variant="outlined" className={classes.inputs2} onChange={(e)=>{setEmail(e.target.value)}} />
                 </Grid>
                 <Grid item>
-                    <TextField id="outlined-basic" label="Message" multiline rows={4} variant="outlined" className={classes.inputs2} />
+                    <TextField id="outlined-basic" label="Message" multiline rows={4} variant="outlined" className={classes.inputs2} onChange={(e)=>{setEmail(e.target.value)}} />
                 </Grid>
                 <Grid item>
-                    <Button variant="contained" className={classes.resumebtn} onClick={()=>navigate('https://drive.google.com/file/d/1SJa0_C9CD9SKJHs_mmDesN62NfDEecCX/view?usp=sharing')}>
-                        Say Hi!
-                    </Button>
+                  {sent? 
+                  <Button variant="contained" className={classes.resumebtn}>
+                    thank you!
+                  </Button>
+                  :
+                  <Button variant="contained" className={classes.resumebtn} onClick={handleSubmit}>
+                      Say Hi!
+                  </Button>
+                  }
                 </Grid>
               </Grid>
           </Grid>

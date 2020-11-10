@@ -32,8 +32,9 @@ const Scrollto = (props) => {
             color:'black',
             marginTop:'50px'
         }
-      }));
-      const classes = useStyles();
+    }));
+    
+    const classes = useStyles();
     return(
         <>
             <Button variant="contained" className={classes.btn} onClick={handleClick}>

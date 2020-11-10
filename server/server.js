@@ -19,6 +19,7 @@ app.use(cors({
 require('./routes/Users.routes')(app);
 // require('./routes/Message.routes')(app);
 require('./routes/Inquiry.routes')(app);
+require('./routes/Email.routes')(app);
 const server = app.listen(8000, ()=>{
     console.log("Listening at port 8000")
 })
@@ -54,47 +55,5 @@ io.on("connection", socket =>{
 
 
 
-// SMTP server
-var transport = {
-    host: 'smtp.gmail.com', // e.g. smtp.gmail.com
-    auth: {
-        user: creds.USER,
-        pass: creds.PASS
-        }
-    }
 
-    var transporter = nodemailer.createTransport(transport)
-
-    transporter.verify((error, success) => {
-        if (error) {
-        console.log(error);
-        } else {
-        console.log('All works fine, congratz!');
-        }
-    });
-    
-    app.post('/send', (req, res, next) => {
-        const name = req.body.name
-        const email = req.body.email
-        const message = req.body.messageHtml
-        var mail = {
-        from: name,
-        to: 'RECEIVING_EMAIL_ADDRESS_GOES_HERE',  
-        subject: 'Contact form request',
-    
-        html: message
-        }
-    
-        transporter.sendMail(mail, (err, data) => {
-        if (err) {
-            res.json({
-            msg: 'fail'
-            })
-        } else {
-            res.json({
-            msg: 'success'
-            })
-        }
-        })
-    })
 
